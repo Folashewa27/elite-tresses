@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Products - EliteTresses</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family:'Poppins',sans-serif;margin:0;background:#f9f6f2;color:#222; }
+    nav{background:black;padding:15px;text-align:center;}
+    nav a{margin:0 12px;color:#ddd;text-decoration:none;font-weight:bold;}
+    nav a:hover{color:#fff;}
+    .booking-section{padding:40px;max-width:800px;margin:40px auto;background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
+    .booking-section h2{text-align:center;margin-bottom:10px;}
+    .subtitle{text-align:center;margin-bottom:20px;color:#555;}
+    .product-list{border:1px solid #e6e6e6;border-radius:8px;padding:12px;max-height:280px;overflow-y:auto;margin-bottom:10px;}
+    .product-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee;}
+    .product-item:last-child{border-bottom:none;}
+    .totals{display:flex;justify-content:space-between;font-weight:600;margin:10px 0;}
+    .booking-form label{display:block;margin-bottom:6px;}
+    .booking-form input,.booking-form textarea{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
+    .booking-form button{width:100%;padding:12px;background:#817979;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+    .booking-form button:hover{background:#444;}
+    .empty{text-align:center;padding:16px;color:#666;}
+     .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #0e0c0e;
+      color: #ddd;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+     .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+       }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+      }
+      @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+    .footer-column {
+        width: 100%;
+      }
+  </style>
+</head>
+<body>
+  <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="location.html">Location</a>
+      <a href="try.html">Our Products</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="contact.html">Contact</a>
+      <!-- <a href="book.html" target="_blank">Order Now</a> -->
+    </nav>
+
+  <section class="booking-section">
+    <h2>Book Your Products</h2>
+    <p class="subtitle">Your items from the cart are listed below. Enter your details and tap “Book Now”.</p>
+
+    <div id="productsContainer" class="product-list">
+      <div class="empty">Loading your cart...</div>
+    </div>
+
+    <div class="totals">
+      <div>Total</div>
+      <div id="grandTotal">₦0</div>
+    </div>
+
+    <form id="bookingForm" class="booking-form">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label for="address">Address / Note (optional)</label>
+      <textarea id="address" rows="3" placeholder="Estate, city, delivery note, etc."></textarea>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+  <footer>
+  <div class="container">
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <strong>QUICK LINKS</strong>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="try.html">Our Products</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="location.html">Our Location</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies Column -->
+      <div class="footer-column">
+        <strong>POLICIES</strong>
+        <ul>
+          <li><a href="ship.html">Shipment Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+           <li><a href="refund.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 EliteTresses | All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  
+  
+
+
+  <script>
+    const productsContainer = document.getElementById('productsContainer');
+    const grandTotalElem = document.getElementById('grandTotal');
+    let items = [];
+    let grandTotal = 0;
+
+    function renderCartFromStorage() {
+      const raw = localStorage.getItem('cartItems');
+      productsContainer.innerHTML = '';
+      if (!raw) { productsContainer.innerHTML = '<div class="empty">No products in your booking list.</div>'; grandTotalElem.textContent='₦0'; return;}
+      items = JSON.parse(raw) || [];
+      if(items.length===0){ productsContainer.innerHTML = '<div class="empty">No products in your booking list.</div>'; grandTotalElem.textContent='₦0'; return; }
+      grandTotal = 0;
+      items.forEach((item, idx)=>{
+        const qty = Number(item.quantity) || 1;
+        const price = Number(item.price) || 0;
+        const lineTotal = price*qty;
+        grandTotal+=lineTotal;
+        const row = document.createElement('div');
+        row.className='product-item';
+        row.innerHTML = `<div>${idx+1}. ${item.name} × ${qty}</div><div>₦${lineTotal.toLocaleString()}</div>`;
+        productsContainer.appendChild(row);
+      });
+      grandTotalElem.textContent = '₦'+grandTotal.toLocaleString();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCartFromStorage);
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!items || items.length===0){ alert('No products to book.'); return; }
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      // Save order in localStorage
+      let existingOrders = JSON.parse(localStorage.getItem('orders')) || [];
+      const orderData = {
+        userEmail: email,
+        date: new Date(),
+        items: items.map(it=>({name:it.name,quantity:it.quantity,price:it.price})),
+        total: grandTotal
+      };
+      existingOrders.push(orderData);
+      localStorage.setItem('orders', JSON.stringify(existingOrders));
+
+      // Build WhatsApp message
+      const lines = ['Hello EliteTresses,','I want to book the following products:'];
+      items.forEach((item,idx)=>{
+        const qty = Number(item.quantity) || 1;
+        const price = Number(item.price) || 0;
+        const lineTotal = price*qty;
+        lines.push(`${idx+1}. ${item.name} - Qty: ${qty} - ₦${lineTotal.toLocaleString()}`);
+      });
+      lines.push('');
+            lines.push(`Total: ₦${grandTotal.toLocaleString()}`);
+      lines.push('---');
+      lines.push(`Name: ${name}`);
+      lines.push(`Email: ${email}`);
+      lines.push(`Phone: ${phone}`);
+      if(address) lines.push(`Address/Note: ${address}`);
+      const message = encodeURIComponent(lines.join('\n'));
+      const whatsappNumber = '2347018814724';
+      window.location.href=`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+
+      // Clear cart after booking
+      localStorage.removeItem('cart');
+      localStorage.removeItem('cartItems');
+    });
+  </script>
+</body>
+</html>
+

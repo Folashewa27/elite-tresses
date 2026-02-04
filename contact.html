@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Elite Tresses</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav{
+              background-color: black;
+              padding: 15px;
+              text-align: center;
+            }
+            nav a{
+              margin: 0 12px;
+              text-decoration: none;
+              color: #fbbf;
+              font-weight: bold;
+              font-size: 1.1rem;
+            }
+            nav a{
+              color: #ddd;
+            }
+            body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-header {
+  background-color: #222;
+  padding: 10px 0;
+  color: white;
+}
+
+/* nav  {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav  {
+  margin: 0 15px;
+}
+
+nav  {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+} */
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-section {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form button {
+  background-color: #827a86;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #9e84ad;
+}
+
+/* .main-footer {
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 10px 0;
+} */
+  footer {
+              margin-top: 40px;
+              background-color: #0e0c0e;
+              text-align: center;
+              padding: 12px;
+              font-size: 0.9rem;
+              color: #e5dcdc;
+            }
+             .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+            .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+     .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+            .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+      }
+            @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+      .footer-column {
+        width: 100%;
+      }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+     <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="location.html">Location</a>
+        <a href="try.html">Our Products</a>
+        <a href="signup.html">Sign up</a>
+        <a href="contact.html">Contact us</a><br>
+        <!-- <a href="book.html" class="order-btn"  target="_blank">Place to Order</a> -->
+        </nav>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <form action="#" method="post" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        </form>
+        <section class="extra-links">
+        <button type="submit"><a href="thank2.html">Send Message</a></button>
+
+
+    
+      </section>
+    </section> 
+    </main>
+    <footer>
+  <div class="container">
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <strong>QUICK LINKS</strong>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="try.html">Our Products</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies Column -->
+      <div class="footer-column">
+        <strong>POLICIES</strong>
+        <ul>
+          <li><a href="ship.html">Shipment Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+           <li><a href="refund.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 EliteTresses | All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  
+  
+
+
+</body>
+</html>
+
+  
+

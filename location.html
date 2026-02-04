@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Location - EliteTresses</title>
+  <style>
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-column {
+        width: 100%;
+      }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: white;
+      color: #333;
+    }
+    header {
+      background-color: black;
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    nav {
+      background-color: black;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    h1 {
+      text-align: center;
+      color: rgb(168, 118, 44);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .locations {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      margin: 20px 0;
+      color: #555;
+    }
+    .contact, .hours {
+      margin: 20px 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #333;
+    }
+    .contact a {
+      color: #d10024;
+      text-decoration: underline; /* Make sure it looks clickable */
+      font-weight: bold;
+    }
+    .contact a:hover {
+      text-decoration: none;
+    }
+    .map-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    iframe {
+      border: 0;
+      width: 100%;
+      max-width: 700px;
+      height: 450px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .enlarged {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px auto 40px;
+      max-width: 900px;
+    }
+    .location {
+      text-align: center;
+      max-width: 200px;
+    }
+    .location img {
+      width: 150px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid rgb(16, 16, 15);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    header .container p {
+      font-size: large;
+      color: antiquewhite;
+    }
+    header .container img {
+      vertical-align: middle;
+    }
+    footer {
+      margin-top: 50px;
+      background-color: #0e0c0e;
+      color: #e5dcdc;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="home.html" target="_blank">Home</a>
+      <a href="about.html" target="_blank">About Us</a>
+      <a href="location.html" target="_blank"> Our Location</a>
+      <a href="try.html" target="_blank">Our Products</a>
+      <a href="signup.html" target="_blank">Sign up</a>
+      <a href="contact.html" target="_blank">Contact us</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Locations in Nigeria & Italy</h1>
+    <div class="locations">
+      <p><strong>EliteTresses Office Locations:</strong></p>
+
+      <h3 style="color:#d10024;"> Nigeria Offices</h3>
+      <p>Lagos State</p>
+      <p>Abuja (FCT)</p>
+      <p>Rivers State (Port Harcourt)</p>
+      <p>Oyo State</p>
+      <p>Kano State</p>
+      <p>Anambra State</p>
+      <p>Enugu State</p>
+
+      <h3 style="color:#d10024; margin-top:25px;"> Italy Offices</h3>
+      <p>Milan, Italy</p>
+      <p>Rome, Italy</p>
+    </div>
+
+    <div class="contact">
+      <p><strong>Contact Us:</strong></p>
+      <p>
+        Phone:
+        <a href="tel:+2347018814724">+234 701 881 4724</a>
+      </p>
+      <p>
+        Email:
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=priscillaayeni420@gmail.com&su=Hello%20EliteTresses&body=I%20would%20like%20to%20make%20an%20inquiry" target="_blank">
+          priscillaayeni420@gmail.com
+        </a>
+      </p>
+      <p><em>Company origin: Italy | Established in Nigeria</em></p>
+    </div>
+
+    <div class="hours">
+      <p><strong>Business Hours:</strong></p>
+      <p>Monday - Saturday: 9:00 AM - 9:00 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+
+    <h1>Gallery:</h1>
+    <section class="gallery">
+      <div class="container">
+        <h3>Our Styling Hub</h3>
+        <div class="enlarged">
+          <div class="location">
+            <img src="bzORZr20EgxgYBREHfQwH2DdHek.avif" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="beauty-salon-in-kakamigahara-studio-velocity_1.jpg" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="d7a7e7bd-15ee-438e-9beb-0e834d4a60a8-MaliaCoSalonandSpa-US-WestVirginia-Vienna-Fresha.avif" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="The-Braiding-Vault-Signature.jpg" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="hair-salon-in-nigeria-1.jpg" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="em.webp" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="em1.jpg" alt="designer" />
+          </div>
+          <div class="location">
+            <img src="em2.avif" alt="designer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.545487784117!2d3.3981338153131313!3d6.445570324931676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf44caa27f40f%3A0x12161f5ec7c0d982!2sLagos%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1690870000000!5m2!1sen!2sng"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="EliteTresses Lagos Location"
+      ></iframe>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <strong>QUICK LINKS</strong>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="try.html">Our Products</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies Column -->
+      <div class="footer-column">
+        <strong>POLICIES</strong>
+        <ul>
+          <li><a href="ship.html">Shipment Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 EliteTresses | All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>

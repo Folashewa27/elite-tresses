@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Elite Tresses</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefaf7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #7d5a4f;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    input {
+      padding: 10px 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .remember input {
+      margin-right: 6px;
+    }
+
+    button {
+      background-color: #454b46;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #95928f;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    p {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 15px;
+      color: #555;
+    }
+    a {
+      color: #a67c52;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Elite Tresses</h2>
+    <p class="subtitle">Luxury Hair Care Starts Here</p>
+
+    <div id="errorMsg" class="error">Invalid email or password</div>
+
+    <form id="loginForm">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <div class="remember">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don’t have an account? <a href="signup.html">Sign up here</a>.</p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const rememberMe = document.getElementById("rememberMe").checked;
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const foundUser = users.find(u => u.email === email && u.password === password);
+
+      if (foundUser) {
+        errorMsg.style.display = "none";
+
+        // 🔑 Save active user (same as signup)
+        localStorage.setItem("activeUser", JSON.stringify(foundUser));
+
+        // If remember me is checked, persist login
+        if (rememberMe) {
+          localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+        } else {
+          sessionStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+        }
+
+        // Redirect straight to profile
+        window.location.href = "profile.html";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
