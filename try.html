@@ -1,0 +1,1219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EliteTresses - Our Products</title>
+
+  <!-- Font Awesome for shopping cart icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    a.Submit-Review {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4b2e2e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    a.Submit-Review:hover {
+      background-color: #6a3a3a;
+    }
+    body {
+      background-color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+.container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+     .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+      }
+      @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+      .footer-column {
+        width: 100%;
+      }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    .product-card video {
+    max-height: 190px;
+  }
+
+    .product-card img,
+    .product-card video {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-card .name {
+      font-size: 14px;
+      margin: 8px 0;
+      color: #333;
+    }
+
+    .product-card .price {
+      font-weight: bold;
+      color: #d10024;
+    }
+
+    .product-card .rating {
+      font-size: 14px;
+      color: gold;
+    }
+    #review-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #review-form h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #8b4513;
+    }
+
+    /* Styled link as button */
+    .add-to-cart {
+      display: inline-block;
+      background-color: #d10024;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #a8001d;
+      color: white;
+    }
+
+    nav {
+      background-color: black;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: #0e0c0e;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9rem;
+      color: #e5dcdc;
+    }
+    .add-btn {
+      margin-top: 10px;
+      background: #d10024;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-btn:hover {
+      background: #a8001d;
+    }
+    .floating-cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #d10024;
+      color: white;
+      font-size: 1.3rem;
+      padding: 12px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #d10024;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+    }
+        
+  </style>
+</head>
+<body>
+ <a href="cart.html" class="floating-cart" title="Go to cart">🛒</a>
+<div id="toast"></div>
+
+
+      <img src="elite.jpg" alt="logo" width="100" height="88" />
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="location.html">Location</a>
+        <a href="try.html">Our Products</a>
+        <a href="signup.html">Sign up</a>
+        <a href="contact.html">Contact us</a>
+        <!-- <a href="book.html" class="order-btn" target="_blank">Place to Order</a> -->
+      </nav>
+
+  
+      
+
+  <main class="menu-container">
+    <section1 class="menu-category">
+      <h1 style="text-align:center;">Our Products</h1>
+
+      <p style="text-align: center; color: brown; text-decoration: underline;">
+        WIGS & EXTENSIONS
+      </p>
+
+      <section class="product-grid">
+        <div class="product-card">
+          <img src="wig15.jpg" alt="Wig 1" />
+          <p class="name">Pixie Cut Straight-Short White Bob 5x4 Lace...</p>
+          <p class="price">₦75,000.00</p>
+          <p class="rating">★★★★★ (9)</p>
+          <button class="add-btn" onclick="addToCart('Pixie Cut Straight-Short White Bob 5x4 Lace...', 75000, 'wig15.jpg')">Add to Cart</button>
+  </div>
+         
+        
+         <div class="product-card">
+          <img src="wi19.webp" alt="Wig 6" />
+          <p class="name">Double Drawn Color Bob with Fringe Wig...</p>
+          <p class="price">₦88,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Double Drawn Color Bob with Fringe Wig...', 88000, 'wi19.webp')">Add to Cart</button>
+  </div>
+
+
+        <div class="product-card">
+          <img src="wig13.jpg" alt="Wig 2" />
+          <p class="name">99J Brown Bone Straight Glueless 5x5...</p>
+          <p class="price">₦115,000.00</p>
+          <p class="rating">★★★★★ (20)</p>
+         <button class="add-btn" onclick="addToCart('99J Brown  Bone Straight Glueless 5x5 ...', 115000, 'wig13.jpg')">Add to Cart</button>
+  </div>
+
+
+        <div class="product-card">
+          <img src="wig9.jpg" alt="Wig 3" />
+          <p class="name">Dark Chestnut Left Part Cut with Fringe...</p>
+          <p class="price">₦95,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Dark Chestnut Left Part Cut with Fringe...', 115000, 'wig9.jpg')">Add to Cart</button>
+  </div>
+
+        <div class="product-card">
+          <img src="wig16.jpg" alt="Wig 4" />
+          <p class="name">Double Drawn Dark Chestnut 13x4 with Fringe...</p>
+          <p class="price">₦59,000.00</p>
+          <p class="rating">★★★★☆ (8)</p>
+          <button class="add-btn" onclick="addToCart('Double Drawn Dark Chestnut 13x4 with Fringe...', 115000, 'wig16.jpg')">Add to Cart</button>
+  </div>
+
+        <div class="product-card">
+          <img src="wig17.jpg" alt="Wig 5" />
+          <p class="name">Glueless Double Drawn Dark Wavy ...</p>
+          <p class="price">₦99,000.00</p>
+          <p class="rating">★★★★☆ (8)</p>
+          <button class="add-btn" onclick="addToCart('Glueless Double Drawn Dark Wavy ...', 115000, 'wig17.jpg')">Add to Cart</button>
+  </div>
+        
+       
+
+        <div class="product-card">
+          <img src="wig8.jpg" alt="Wig 7" />
+          <p class="name">Drawn Glueless 2x4 Closure Lace Bob 100% Human Wig. ...</p>
+          <p class="price">₦90,000.00</p>
+          <p class="rating">★★★★☆ (8)</p>
+          <button class="add-btn" onclick="addToCart('Drawn Glueless 2x4 Closure Lace Bob 100% Human Wig...', 115000, 'wig8.jpg')">Add to Cart</button>
+  </div>
+         
+
+        <div class="product-card">
+          <img src="wig11.jpg" alt="Wig 8" />
+          <p class="name">Double Drawn Blonde Bob with Fringe Wig...</p>
+          <p class="price">₦81,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Double Drawn Blonde Bob with Fringe Wig...', 115000, 'wig11.jpg')">Add to Cart</button>
+  </div>
+         
+
+        <div class="product-card">
+          <img src="wig1.jpg" alt="Wig 9" />
+          <p class="name">Plaited Chestnut Drawn Wig...</p>
+          <p class="price">₦41,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Plaited Chestnut Drawn Wig...', 115000, 'wig1.jpg')">Add to Cart</button>
+  </div>
+          
+
+        <div class="product-card">
+          <img src="wig5.jpg" alt="Wig 10" />
+          <p class="name">Drawn Silky Frontal Wig ...</p>
+          <p class="price">₦82,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Drawn Silky Frontal Wig ...', 115000, 'wig5.jpg')">Add to Cart</button>
+  </div>
+          
+
+        <div class="product-card">
+          <img src="wig12.jpg" alt="Wig 11" />
+          <p class="name">Body Wave Raw Wavy Hair Compact Frontal Wig...</p>
+          <p class="price">₦58,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Body Wave Raw Wavy Hair Compact Frontal Wig...', 115000, 'wig12.jpg')">Add to Cart</button>
+  </div>
+
+
+        <div class="product-card">
+          <img src="wig18.jpg" alt="Wig 12" />
+          <p class="name">Body Wave Raw Wavy Hair Compact Frontal Wig...</p>
+          <p class="price">₦71,000.00</p>
+          <p class="rating">★★★★★ (14)</p>
+          <button class="add-btn" onclick="addToCart('Body Wave Raw Wavy Hair Compact Frontal Wig...', 115000, 'wig18.jpg')">Add to Cart</button>
+  </div>
+          
+
+        <div class="product-card">
+          <img src="wig3.jpg" alt="Wig 13" />
+          <p class="name"> Senegalese Twists Wig...</p>
+    <p class="price"> ₦60,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Senegalese Twists Wig...', 115000, 'wig3.jpg')">Add to Cart</button>
+  </div>
+    
+  
+  
+<div class="product-card">
+    <img src="wig6.jpg" alt="Wig 3">
+    <p class="name"> Fulani Braids Wig...</p>
+    <p class="price">₦28,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Fulani Braids Wig...', 115000, 'wig6.jpg')">Add to Cart</button>
+  </div>
+    
+
+
+  
+  
+<div class="product-card">
+    <img src="wig2.jpg" alt="Wig 3">
+    <p class="name"> Faux Locs Wig...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Faux Locs Wig...', 115000, 'wig2.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="wig19.jpeg" alt="Wig 3">
+    <p class="name">  Twisted Faux Locs Wig...</p>
+    <p class="price">₦35,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart (' Twisted Faux Locs Wig...', 115000, 'wig19.jpeg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="wig20.jpeg" alt="Wig 3">
+    <p class="name"> Drawn Glueless 2x4 Closure Bob 100% Human Wig. ...</p>
+    <p class="price">₦57,000.00</p>
+    <p class="rating">★★★★★ (19)</p>
+    <button class="add-btn" onclick="addToCart('Drawn Glueless 2x4 Closure Bob 100% Human Wig...', 115000, 'wig20.jpeg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="wig21.jpeg" alt="Wig 3">
+    <p class="name"> African Curly Glueless Wig...</p>
+    <p class="price">₦62,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' African Curly Glueless Wig...', 115000, 'wig21.jpeg')">Add to Cart</button>
+  </div>
+    
+           <div class="product-card">
+    <img src="wig22.jpeg" alt="Wig 3">
+    <p class="name">Double Drawn Blonde Wig...</p>
+    <p class="price">₦73,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Double Drawn Blonde Wig...', 115000, 'wig22.jpeg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="wig23.jpeg" alt="Wig 3">
+    <p class="name"> Afro Nairobi Wig...</p>
+    <p class="price">₦52,000.00</p>
+    <p class="rating">★★★★★ (28)</p>
+    <button class="add-btn" onclick="addToCart('Afro Nairobi Wig...', 115000, 'wig23.jpeg')">Add to Cart</button>
+  </div>
+    
+  </section>
+  <p style="text-align: center; color: brown; text-decoration: underline;" >HAIR OILS, CREAMS & BOOSTERS </p>
+
+
+  <section class="product-grid">
+  <div class="product-card">
+    <img src="oil1.jpg" alt="Wig 1">
+    <p class="name">Neem Oils...</p>
+    <p class="price">₦25,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Neem Oils...', 115000, 'oil1.jpg')">Add to Cart</button>
+  </div>
+    
+<div class="product-card">
+    <img src="oil2.jpg" alt="Wig 1">
+    <p class="name">Avocado Oils...</p>
+    <p class="price">₦25,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Avocado Oils...', 115000, 'oil2.jpg')">Add to Cart</button>
+  </div>
+   
+<div class="product-card">
+    <img src="oil3.jpg" alt="Wig 1">
+    <p class="name">Jojoba Oils...</p>
+    <p class="price">₦28,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Jojoba Oils ...', 115000, 'oil3.jpg')">Add to Cart</button>
+  </div>
+   
+  <div class="product-card">
+    <img src="oil16.webp" alt="Wig 1">
+    <p class="name">Maha Bhringraj</p>
+    <p class="price">₦30,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Coconut Oils...', 115000, 'oil16.webp')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="cantu2.jpg" alt="Wig 1">
+    <p class="name">Cantu Oils...</p>
+    <p class="price">₦17,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Cantu Oils...', 115000, 'cantu2.jpg')">Add to Cart</button>
+  </div>
+   
+  
+<div class="product-card">
+    <img src="HB3.jpg" alt="Wig 1">
+    <p class="name">Suiselle Boosters...</p>
+    <p class="price">₦24,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Suiselle Boosters...', 115000, 'HB3.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB5.jpg" alt="Wig 1">
+    <p class="name">Rosemary Boosters...</p>
+    <p class="price">₦40,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Rosemary Boosters...', 115000, 'HB5.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB6.jpg" alt="Wig 1">
+    <p class="name">Louis Boosters...</p>
+    <p class="price">₦22,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Louis Boosters...', 115000, 'HB6.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB7.jpg" alt="Wig 1">
+    <p class="name">Almond Creams...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Almond Creams...', 115000, 'HB7.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB8.jpg" alt="Wig 1">
+    <p class="name">Amalian Oils and Boosters...</p>
+    <p class="price">₦45,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Amalian Oils and Boosters...', 115000, 'HB8.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB1.jpg" alt="Wig 1">
+    <p class="name">Baobab Oils and Boosters...</p>
+    <p class="price">₦39,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Baobab Oils and Boosters...', 115000, 'HB1.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="HB2.jpg" alt="Wig 1">
+    <p class="name">Argan Oils and Boosters...</p>
+    <p class="price">₦39,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Argan Oils and Boosters...', 115000, 'HB2.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="cream2.jpg" alt="Wig 1">
+    <p class="name">Castor Creams...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Castor Creams ...', 115000, 'cream2.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="oil7.jpeg" alt="Wig 3">
+    <p class="name"> Almond Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Almond Oils...', 115000, 'oil7.jpeg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="cream1.jpg" alt="Wig 1">
+    <p class="name">Olaplex Creams...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Olaplex Creams...', 115000, 'cream1.jpg')">Add to Cart</button>
+  </div>
+   
+  <div class="product-card">
+    <img src="cream3.jpg" alt="Wig 1">
+    <p class="name">Peppermint Creams...</p>
+    <p class="price">₦30,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Peppermint Creams...', 115000, 'cream3.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="oil9.jpg" alt="Wig 1">
+    <p class="name">Seaweed Oil...</p>
+    <p class="price">₦39,000.00</p>
+    <p class="rating">★★★★★ (9)</p>
+    <button class="add-btn" onclick="addToCart('Seaweed Oil...', 115000, 'oil9.jpg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="oil6.jpeg" alt="Wig 3">
+    <p class="name"> Amla Hair Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Amla Hair Oils...', 115000, 'oil6.jpeg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="oil11.jpg" alt="Wig 3">
+    <p class="name"> Amla Hair Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Amla Hair Oils...', 115000, 'oil1.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="oil12.webp" alt="Wig 3">
+    <p class="name"> Amla Hair Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Amla Hair Oils...', 115000, 'oil12.webp')">Add to Cart</button>
+  </div>
+    <div class="product-card">
+    <img src="oil10.jpg" alt="Wig 3">
+    <p class="name"> Amla Hair Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Amla Hair Oils...', 115000, 'oil0.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="oil13.jpg" alt="Wig 3">
+    <p class="name"> Amla Hair Oils...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Amla Hair Oils...', 115000, 'oil3.jpg')">Add to Cart</button>
+  </div>
+  
+  <div class="product-card">
+    <img src="oil14.webp" alt="Wig 3">
+    <p class="name"> ...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' ...', 115000, 'oil14.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="oil15.jpg" alt="Wig 3">
+    <p class="name"> ...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' ...', 115000, 'oil15.jpg')">Add to Cart</button>
+  </div>
+  </section>
+   <p style="text-align: center; color: brown; text-decoration: underline;" >HAIR SHAMPOOS AND BOOSTERS </p>
+   <section class="product-grid">
+  <div class="product-card">
+    <img src="cantu.jpg" alt="Wig 1">
+    <p class="name">Cantu Shampoo...</p>
+    <p class="price">₦15,000.00</p>
+    <p class="rating">★★★★★ (17)</p>
+    <button class="add-btn" onclick="addToCart('Cantu Shampoo ...', 115000, 'cantu.jpg')">Add to Cart</button>
+  </div>
+    
+
+  
+  <div class="product-card">
+    <img src="hb11.jpeg" alt="Wig 3">
+    <p class="name"> Johnson's Shampoo...</p>
+    <p class="price">₦12,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Johnsons Shampoo ...', 115000, 'hb11.jpeg')">Add to Cart</button>
+  </div>
+   
+  <div class="product-card">
+    <img src="megagrowth.jpg" alt="Wig 1">
+    <p class="name">Megagrowth Shampoo...</p>
+    <p class="price">₦15,000.00</p>
+    <p class="rating">★★★★★ (15)</p>
+    <button class="add-btn" onclick="addToCart(' Megagrowth Shampoo...', 115000, 'megagrowth.jpg')">Add to Cart</button>
+  </div>
+    
+  <div class="product-card">
+    <img src="hb9.jpeg" alt="Wig 1">
+    <p class="name">Keratin Shampoo...</p>
+    <p class="price">₦15,000.00</p>
+    <p class="rating">★★★★★ (15)</p>
+    <button class="add-btn" onclick="addToCart('Keratin Shampoo ...', 115000, 'hb9.jpeg')">Add to Cart</button>
+  </div>
+    
+   <div class="product-card">
+    <img src="hb10.jpeg" alt="Wig 1">
+    <p class="name">Cocount Milk Shampoo...</p>
+    <p class="price">₦15,000.00</p>
+    <p class="rating">★★★★★ (15)</p>
+    <button class="add-btn" onclick="addToCart(' Cocount Milk Shampoo...', 115000, 'hb10.jpeg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="antihairloss.jpg" alt="Wig 3">
+    <p class="name"> Anti Hair Loss Shampoo...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Anti Hair Loss Shampoo ...', 115000, 'antihairloss.jpg')">Add to Cart</button>
+  </div>
+   <div class="product-card">
+    <img src="sh2.jpg" alt="Wig 3">
+    <p class="name"> Olaplex Shampoo</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Olaplex Shampoo ...', 115000, 'sh2.jpg')">Add to Cart</button>
+  </div>
+   <div class="product-card">
+    <img src="sh1.jpg" alt="Wig 3">
+    <p class="name"> Anti Hair Loss Shampoo...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Anti Hair Loss Shampoo ...', 115000, 'sh1.jpg')">Add to Cart</button>
+  </div>
+   <div class="product-card">
+    <img src="sh3.webp" alt="Wig 3">
+    <p class="name"> Anti Hair Loss Shampoo...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Anti Hair Loss Shampoo ...', 115000, 'sh3.webp')">Add to Cart</button>
+  </div>
+   <div class="product-card">
+    <img src="sh8.webp" alt="Wig 3">
+    <p class="name"> Anti Hair Loss Shampoo...</p>
+    <p class="price">₦20,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Anti Hair Loss Shampoo ...', 115000, 'sh8.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="sh6.webp" alt="Wig 3">
+    <p class="name"> ...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' ...', 115000, 'sh6.webp')">Add to Cart</button>
+  </div>
+    <div class="product-card">
+    <img src="sh7.webp" alt="Wig 3">
+    <p class="name"> ...</p>
+    <p class="price">₦32,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' ...', 115000, 'sh7.webp')">Add to Cart</button>
+  </div>
+          </section>
+          <p style="text-align: center; color: brown; text-decoration: underline;" >HAIR ACCESSORIES </p>
+          <section class="product-grid">
+          <div class="product-card">
+    <img src="accessories1.jpg" alt="Wig 3">
+    <p class="name"> Jewelry Hair Set</p>
+    <p class="price">₦9,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Jewelry Hair Set', 9000, 'accessories1.jpg')">Add to Cart</button>
+  </div>
+   
+   <div class="product-card">
+    <img src="accessories2.jpg" alt="Wig 3">
+    <p class="name"> Butterfly Hair Accessory</p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart( 'Butterfly Hair Accessory', 1000, 'accessories2.jpg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="accessories4.jpg" alt="Wig 3">
+    <p class="name"> Silk Hair Accessory Set</p>
+    <p class="price">₦6,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Silk Hair Accessory Set', 6000, 'accessories4.jpg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="accessories5.jpg" alt="Wig 3">
+    <p class="name"> Silk Hair Accessory Set</p>
+    <p class="price">₦6,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Silk Hair Accessory Set', 6000, 'accessories5.jpg')">Add to Cart</button>
+  </div>
+    
+           <div class="product-card">
+    <img src="accessories6.jpg" alt="Wig 3">
+    <p class="name"> Jade Hair Accessory</p>
+    <p class="price">₦10,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Jade Hair Accessory', 10000, 'accessories6.jpg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="accessories7.jpg" alt="Wig 3">
+    <p class="name"> White Bead Studded Hair Band</p>
+    <p class="price">₦3,500.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' White Bead Studded Hair Band', 3500, 'accessories7.jpg')">Add to Cart</button>
+  </div>
+    
+          <div class="product-card">
+    <img src="scrunchies1.jpg" alt="Wig 3">
+    <p class="name">  Silk Scrunchies</p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('  Silk Scrunchies', 1000, 'scrunchies1.jpg')">Add to Cart</button>
+  </div>
+   
+          <div class="product-card">
+    <img src="scrunchies2.jpg" alt="Wig 3">
+    <p class="name">  Silk Scrunchy Band</p>
+    <p class="price">₦2,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('  Silk Scrunchy Band', 2000, 'scrunchies2.jpg')">Add to Cart</button>
+  </div>
+   
+          <div class="product-card">
+    <img src="scrunchies3.jpg" alt="Wig 3">
+    <p class="name"> Silk Scrunchy Band</p>
+    <p class="price">₦2,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Silk Scrunchy Band', 2000, 'scrunchies3.jpg.jpg')">Add to Cart</button>
+  </div>
+    
+            <div class="product-card">
+    <img src="scrunchies4.jpg" alt="Wig 3">
+    <p class="name"> Silk Scrunchies</p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Silk Scrunchies', 1000, 'scrunchies4.jpg')">Add to Cart</button>
+  </div>
+    
+            <div class="product-card">
+    <img src="scrunchies5.jpg" alt="Wig 3">
+    <p class="name"> Silk Scrunchies</p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+     <button class="add-btn" onclick="addToCart('Silk Scrunchies', 1000, 'scrunchies5.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories8.jpg" alt="Wig 3">
+    <p class="name"> Jewelry Hair Set</p>
+    <p class="price">₦6,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Jewelry Hair Set', 6000, 'accessories8.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories9.webp" alt="Wig 3">
+    <p class="name">  Rubber Hair Clip</p>
+    <p class="price">₦2,500.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('  Rubber Hair Clip', 2500, 'accessories9.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories10.webp" alt="Wig 3">
+    <p class="name"> Rubber Hair Clip </p>
+    <p class="price">₦2,500.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Rubber Hair Clip ', 2500, 'accessories10.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories11.webp" alt="Wig 3">
+    <p class="name"> Alice Band</p>
+    <p class="price">₦3,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Alice Band', 3000, 'accessories11.webp')">Add to Cart</button>
+  </div>
+<div class="product-card">
+    <img src="accessories12.jpg" alt="Wig 3">
+    <p class="name"> Frontal Rubber Hair Clip</p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('   Frontal Rubber Hair Clip', 1000, 'accessories12.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories13.webp" alt="Wig 3">
+    <p class="name"> Rubber Hair Clip</p>
+    <p class="price">₦1,700.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Rubber Hair Clip ', 1700, 'accessories13.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories14.jpg" alt="Wig 3">
+    <p class="name"> Rubber Hair Clip</p>
+    <p class="price">₦2,500.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('  Rubber Hair Clip', 2500, 'accessories14.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories15.webp" alt="Wig 3">
+    <p class="name">Frontal Rubber Hair Clip</p>
+    <p class="price">₦900.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Frontal Rubber Hair Clip ', 900, 'accessories15.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="accessories16.jpg" alt="Wig 3">
+    <p class="name">Silvery hair accessory </p>
+    <p class="price">₦10,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Silvery hair accessory ', 10000, 'accessories16.jpg')">Add to Cart</button>
+  </div>
+<div class="product-card">
+  <video controls>
+    <source src="temu1.mp4" type="video/mp4">
+    
+  </video>
+  <p class="name">Hair Clips</p>
+  <p class="price">₦2,000.00</p>
+  <p class="rating">★★★★★ (14)</p>
+  <button class="add-btn" onclick="addToCart('Hair Clips', 2000, 'temu1.mp4')">Add to Cart</button>
+</div>
+<div class="product-card">
+  <video controls>
+    <source src="temu.mp4" type="video/mp4">
+    
+  </video>
+  <p class="name"> Jewelry Hair Set</p>
+  <p class="price">₦12,000.00</p>
+  <p class="rating">★★★★★ (14)</p>
+  <button class="add-btn" onclick="addToCart(' Jewelry Hair Set', 12000, 'temu.mp4')">Add to Cart</button>
+</div>
+<div class="product-card">
+  <video controls>
+    <source src="temu2.mp4" type="video/mp4">
+    
+  </video>
+  <p class="name">Mini Rubber Hair Clips</p>
+  <p class="price">₦1,000.00</p>
+  <p class="rating">★★★★★ (14)</p>
+  <button class="add-btn" onclick="addToCart('Mini Rubber Hair Clips', 1000, 'temu2.mp4')">Add to Cart</button>
+</div>
+ <div class="product-card">
+    <img src="accessories17.webp" alt="Wig 3">
+    <p class="name"> Mini Rubbers </p>
+    <p class="price">₦1,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Mini Rubbers ', 1000, 'accessories17.jpg')">Add to Cart</button>
+  </div>
+    <!-- <a href="cart.html" class="add-to-cart"
+            ><i class="fas fa-shopping-cart"></i> Add to Cart</a
+          > -->
+          </div>
+</section>
+  
+
+  
+  <p style="text-align: center; color: brown; text-decoration: underline;" >HAIR COMBS </p>
+          <section class="product-grid">
+  
+<div class="product-card">
+    <img src="comb8.webp" alt="Wig 3">
+    <p class="name">Colorful Comb</p>
+    <p class="price">₦2,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Colorful Comb', 2000, 'comb8.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb7.webp" alt="Wig 3">
+    <p class="name">Japanese Kanzashi Kushi Comb </p>
+    <p class="price">₦7,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Japanese Kanzashi Kushi Comb', 7000, 'comb7.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb2.jpg" alt="Wig 3">
+    <p class="name">African Comb </p>
+    <p class="price">₦2,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' African Comb', 2000, 'comb2.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb3.jpg" alt="Wig 3">
+    <p class="name"> Black Comb Set</p>
+    <p class="price">₦5,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Black Comb Set', 5000, 'comb3.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb4.jpg" alt="Wig 3">
+    <p class="name">Vintage Wooden Comb Set </p>
+    <p class="price">₦7,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Vintage Wooden Comb', 7000, 'comb4.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb5.jpg" alt="Wig 3">
+    <p class="name">Yellow Kushi Comb </p>
+    <p class="price">₦5,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Yellow Kushi Comb', 7000, 'comb5.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb6.jpg" alt="Wig 3">
+    <p class="name"> Traditional Yatta Comb</p>
+    <p class="price">₦7,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Traditional Yatta Comb', 7000, 'comb6.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb.webp" alt="Wig 3">
+    <p class="name">Pink Comb Set </p>
+    <p class="price">₦5,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Pink Comb Set', 5000, 'comb.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb12.webp" alt="Wig 3">
+    <p class="name">Round Vented Comb </p>
+    <p class="price">₦3,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Round Vented Comb', 3000, 'comb12.webp')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb9.jpg" alt="Wig 3">
+    <p class="name">Styling Comb Set </p>
+    <p class="price">₦10,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' Styling Comb Set', 10000, 'comb9.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb10.jpg" alt="Wig 3">
+    <p class="name">Antique Spanish Hair Comb Set </p>
+    <p class="price">₦9,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart('Antique Spanish Hair Comb Set', 9000, 'comb10.jpg')">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="comb11.jpg" alt="Wig 3">
+    <p class="name"> French Ivory Comb  </p>
+    <p class="price">₦6,000.00</p>
+    <p class="rating">★★★★★ (14)</p>
+    <button class="add-btn" onclick="addToCart(' French Ivory Comb', 6000, 'comb11.jpg')">Add to Cart</button>
+  </div>
+</div>
+</section>
+ <!-- Leave a Review Section -->
+<section class="review-section">
+  <h2>Leave a Review</h2>
+  <form id="reviewForm">
+    <label for="reviewerName">Your Name</label>
+    <input type="text" id="reviewerName" placeholder="Enter your name" required>
+
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" class="form-control" id="location" placeholder="City, State" required>
+      
+ <label for="rating" >Rating:</label>
+        <select id="rating" required>
+          <option value="">Choose...</option>
+          <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; (5 - Excellent)</option>
+          <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734; (4 - Good)</option>
+          <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734; (3 - Average)</option>
+          <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734; (2 - Poor)</option>
+          <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734; (1 - Bad)</option>
+        </select> 
+   
+
+    <label for="comment">Your Review</label>
+    <textarea id="comment" rows="4" placeholder="Write your review..." required></textarea>
+<a href="thank.html" class="Submit-Review" target="_top">Submit Review</a>
+    <!-- <button type="submit"> <a href="thank.html">Submit Review</a></button> -->
+  </form>
+
+  <!-- <h3>Customer Reviews</h3>
+  <div id="reviewsContainer" class="reviews-list">
+     -->
+  
+</section>
+
+<style>
+.review-section {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+.review-section h2, 
+.review-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.review-section form {
+  margin-bottom: 30px;
+}
+.review-section label {
+  font-weight: 500;
+  display: block;
+  margin: 10px 0 5px;
+}
+.review-section input,
+.review-section select,
+.review-section textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+.review-section button {
+  width: 100%;
+  padding: 12px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.review-section button:hover {
+  background: #cebcbc;
+}
+.reviews-list .review-item {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.reviews-list .review-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+</style>
+
+<!-- <script>
+const reviewForm = document.getElementById("reviewForm");
+const reviewsContainer = document.getElementById("reviewsContainer");
+
+// Load saved reviews from localStorage
+let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+function renderReviews() {
+  reviewsContainer.innerHTML = "";
+  if (reviews.length === 0) {
+    reviewsContainer.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
+    return;
+  }
+  reviews.forEach(r => {
+    const div = document.createElement("div");
+    div.className = "review-item";
+    div.innerHTML = `
+      <strong>${r.name} - ${"⭐".repeat(r.rating)}</strong>
+      <p>${r.comment}</p> -->
+    <!-- `;
+    reviewsContainer.appendChild(div);
+  });
+}
+
+reviewForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("reviewerName").value.trim();
+  const rating = parseInt(document.getElementById("rating").value);
+  const comment = document.getElementById("comment").value.trim();
+
+  if (!name || !rating || !comment) return; -->
+
+  <!-- const newReview = { name, rating, comment };
+  reviews.push(newReview);
+
+  localStorage.setItem("reviews", JSON.stringify(reviews));
+  renderReviews();
+
+  reviewForm.reset();
+});
+
+renderReviews();
+</script> -->
+
+<footer>
+  <div class="container">
+    
+      <div class="footer-column">
+        
+       <!-- Quick Links Column -->
+      
+        <strong>QUICK LINKS</strong>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="try.html">Our Products</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies Column -->
+      <div class="footer-column">
+        <strong>POLICIES</strong>
+        <ul>
+          <li><a href="ship.html">Shipment Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+           <li><a href="refund.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 EliteTresses | All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  
+  
+
+</body>
+</html>
+
+   
+                  <script>
+  function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    showToast(`${name} added to cart!`);
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.style.display = "block";
+    setTimeout(() => toast.style.display = "none", 3000);
+  }
+</script>
+
+  
+  
+
+          
